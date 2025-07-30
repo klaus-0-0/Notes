@@ -63,8 +63,8 @@ npm install
 npm run dev
 
 ✅ TODOs
- Google OAuth
- Delete notes
+ Google OAuth |
+ Delete notes |
  Signup / SignIn failed there is no warning sign that you failed authorization !
 
 
