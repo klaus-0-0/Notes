@@ -5,7 +5,7 @@ import { PrismaClient } from "@prisma/client";
 
 const router = express.Router();
 const prisma = new PrismaClient();
-const JWT_SECRET = "your_jwt_secret_key"; // ⛔ Replace with env var in production
+const JWT_SECRET = process.env.JWT_SECRET;
 
 // Signup Route
 router.post("/Signup", async (req: Request, res: Response) => {

@@ -18,7 +18,7 @@ const jwt = require("jsonwebtoken");
 const client_1 = require("@prisma/client");
 const router = express_1.default.Router();
 const prisma = new client_1.PrismaClient();
-const JWT_SECRET = "your_jwt_secret_key"; // ⛔ Replace with env var in production
+const JWT_SECRET = process.env.JWT_SECRET;
 // Signup Route
 router.post("/Signup", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { username, email, password } = req.body;
