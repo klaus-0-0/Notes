@@ -33,18 +33,32 @@ function Dashboard() {
     fetchData();
   }, []);
 
+  function Signout() {
+    localStorage.removeItem("user-info");
+    navigate("/Signup")
+  }
+
   return (
     <div
       className="min-h-screen bg-cover bg-center flex flex-col items-center justify-center px-4 py-10 sm:px-6"
       style={{ backgroundImage: `url(${image})` }}
     >
-      {/* Profile Box */}
-      <div className="bg-white p-6 rounded-lg shadow-md text-center w-full max-w-md mb-6">
+      <h1 className="absolute top-20 font-bold text-gray-700 text-5xl">Dashboard</h1>
+      <div>
+        <button
+          className="absolute top-1 right-4 bg-orange-700 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition-transform duration-200 hover:scale-105"
+          onClick={Signout}
+        >
+          Sign Out
+        </button>
+      </div>
+
+      <div className="bg-white p-6 rounded-lg shadow-lg shadow-gray-500 text-center w-full max-w-md mb-6 border-b">
         <h1 className="text-2xl font-bold text-gray-800">Welcome, {username}!</h1>
         <h2 className="text-lg text-gray-600">{userEmail}</h2>
       </div>
 
-      {/* Button */}
+
       <button
         className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-lg text-lg shadow-md transition-transform duration-200 hover:scale-105 mb-6"
         onClick={() => navigate("/Notes")}
@@ -52,7 +66,7 @@ function Dashboard() {
         Create Notes
       </button>
 
-      {/* Notes Section */}
+
       <div className="w-full max-w-md">
         <h2 className="text-xl font-semibold text-white mb-4 text-center">Your Notes</h2>
 
@@ -61,8 +75,8 @@ function Dashboard() {
             <div key={note.id || i}>
               <p className="bg-white p-4 rounded shadow text-gray-700 cursor-pointer"
                 onClick={() => {
-                  setNoteIndex(i);  // ✅ store index
-                  navigate("/NoteDetails", { state: { note } }); // ✅ send note data
+                  setNoteIndex(i);
+                  navigate("/NoteDetails", { state: { note } });
                 }}>
                 {`note ${i + 1}`}</p>
             </div>
