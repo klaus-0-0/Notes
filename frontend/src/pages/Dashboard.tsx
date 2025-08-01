@@ -43,7 +43,7 @@ function Dashboard() {
       className="min-h-screen bg-cover bg-center flex flex-col items-center justify-center px-4 py-10 sm:px-6"
       style={{ backgroundImage: `url(${image})` }}
     >
-      <h1 className="absolute top-20 font-bold text-gray-700 text-5xl">Dashboard</h1>
+      <h1 className="mt-8 mb-6 font-bold text-gray-700 text-5xl text-center">Dashboard</h1>
       <div>
         <button
           className="absolute top-1 right-4 bg-orange-700 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition-transform duration-200 hover:scale-105"
