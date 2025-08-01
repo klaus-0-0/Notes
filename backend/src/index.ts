@@ -3,7 +3,6 @@ const cors = require("cors")
 import authRoutes from "./authentication";
 const app = express();
 const PORT = process.env.PORT || 4000 ;
-import path from 'path';
 
 
 app.use(cors({
@@ -12,17 +11,6 @@ app.use(cors({
   methods: ["GET", "POST"],
   credentials: true,
 }));
-
-
-// After all your API routes
-app.use((req, res, next) => {
-  res.sendFile(path.join(__dirname, 'path-to-your-build-folder', 'index.html'));
-});
-
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../frontend/build/index.html'));
-});
-
 
 app.use(express.json()); 
 app.use("/api", authRoutes);
