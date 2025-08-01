@@ -16,9 +16,9 @@ app.use(cors({
 app.use(express.static(path.join(__dirname, '../../frontend/dist')));
 
 // Your API routes here
-app.post('/api/something', (req, res) => {
-  // handle API
-});
+// app.post('/api/something', (req, res) => {
+//   // handle API
+// });
 
 // Catch-all for React Router paths
 app.get('*', (req, res) => {
