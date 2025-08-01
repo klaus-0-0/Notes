@@ -8,6 +8,7 @@ function Login() {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const navigate = useNavigate();
+  const [Alert, setAlert] = useState<string>("")
 
   useEffect(() => {
     const activeUser = localStorage.getItem("user-info");
@@ -18,6 +19,7 @@ function Login() {
 
   const handleLogin = async () => {
     try {
+      setAlert("Logging in please wait...")
       const userData = await axios.post(`${config.apiUrl}/Login`, {
         email,
         password,
@@ -28,6 +30,7 @@ function Login() {
         navigate("/Dashboard");
       }
     } catch (error) {
+      setAlert("Login failed.")
       console.error("Login failed:", error);
     }
   };
@@ -72,6 +75,7 @@ function Login() {
         >
           SignUp
         </button>
+        <label className="text-center text-white">{Alert}</label>
       </div>
     </div>
   );
