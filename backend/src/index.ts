@@ -3,7 +3,6 @@ const cors = require("cors")
 import authRoutes from "./authentication";
 const app = express();
 const PORT = process.env.PORT || 4000 ;
-import path from 'path';
 
 app.use(cors({
   origin: "https://notes-frontend-c3jx.onrender.com",
