@@ -46,7 +46,7 @@ function Dashboard() {
       <h1 className="mt-8 mb-6 font-bold text-gray-700 text-5xl text-center">Dashboard</h1>
       <div>
         <button
-          className="top-1 right-4 bg-orange-700 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition-transform duration-200 hover:scale-105"
+          className="absolute top-1 right-4 bg-orange-700 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition-transform duration-200 hover:scale-105"
           onClick={Signout}
         >
           Sign Out
