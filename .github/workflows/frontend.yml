@@ -23,7 +23,11 @@ jobs:
         uses: bahmutov/npm-install@v1  # Installs Node.js dependencies and caches them automatically to speed up future builds
         with:
           working-directory: ./frontend
- 
+
+      - name: Run tests
+        run: npm test  # Runs your test suite as defined in package.json scripts
+        working-directory: ./frontend
+
       - name: Build the project
         run: npm run build   # Runs the build command defined in your package.json (usually for Vite or React)
         working-directory: ./frontend
