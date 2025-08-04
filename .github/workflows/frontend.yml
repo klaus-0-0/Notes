@@ -25,12 +25,18 @@ jobs:
           working-directory: ./frontend
           install-command: npm install
 
-      - name: Run tests
-        run: npm test  # Runs your test suite as defined in package.json scripts
+      - name: Run tests if present
+        run: |
+          if find . -type f \( -name "*.test.*" -o -name "*.spec.*" \) | grep -q .; then
+            echo "✅ Test files found. Running tests..."
+            npm test
+          else
+            echo "⚠️ No test files found. Skipping tests."
+          fi
         working-directory: ./frontend
 
       - name: Build the project
-        run: npm run build   # Runs the build command defined in your package.json (usually for Vite or React)
+        run: npm run build  # Runs the build command defined in your package.json (usually for Vite or React)
         working-directory: ./frontend
 
       - name: Deploy to Render
