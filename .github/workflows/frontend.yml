@@ -1,0 +1,36 @@
+name: Build and Deploy React App  # Name of the workflow shown in GitHub Actions UI
+
+on:
+  push:
+    branches:
+      - main  # Triggers the workflow when a push is made to the 'main' branch
+
+jobs:
+  build-and-deploy:  # Job definition (you can have multiple jobs per workflow)
+    runs-on: ubuntu-latest  # Specifies the virtual environment (Ubuntu) to run the job on
+
+    steps:  # Each step runs a command or uses an action
+
+      - name: Checkout repository
+        uses: actions/checkout@v3  # This checks out your repository code so the workflow can access it
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3  # Sets up the specified version of Node.js so that npm or yarn can be used
+        with:
+          node-version: 18  # The Node.js version to install (version 18 in this case)
+
+      - name: Install dependencies with cache
+        uses: bahmutov/npm-install@v1  # Installs Node.js dependencies and caches them automatically to speed up future builds
+        with:
+          working-directory: ./frontend
+
+      - name: Run tests
+        run: npm test  # Runs your test suite as defined in package.json scripts
+        working-directory: ./frontend
+
+      - name: Build the project
+        run: npm run build   # Runs the build command defined in your package.json (usually for Vite or React)
+        working-directory: ./frontend
+
+      - name: Deploy to Render
+        run: curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}  # Sends a POST request to your Render deploy hook to trigger a new deployment
