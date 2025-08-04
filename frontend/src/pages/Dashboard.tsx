@@ -40,7 +40,7 @@ function Dashboard() {
 
   return (
     <div
-      className="min-h-screen bg-cover bg-center flex flex-col items-center justify-center px-4 py-10 sm:px-6"
+      className="relative min-h-screen bg-cover bg-center flex flex-col items-center justify-center px-4 py-10 sm:px-6"
       style={{ backgroundImage: `url(${image})` }}
     >
       <h1 className="mt-8 mb-6 font-bold text-gray-700 text-5xl text-center">Dashboard</h1>

@@ -7,6 +7,7 @@ import FetchNotes from './pages/FetchNotes'
 import Dashboard from './pages/Dashboard'
 import NoteDetails from './pages/NoteDetails'
 
+
 function App() {
 
   return (
@@ -19,7 +20,7 @@ function App() {
         <Route path='/FetchNotes' element={<FetchNotes />} />
         <Route path='/dashboard' element={ <Dashboard />} />
         <Route path='/NoteDetails' element={ <NoteDetails />} />
-      </Routes>
+       </Routes>
     </Router>
   )
 }

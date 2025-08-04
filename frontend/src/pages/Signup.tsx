@@ -18,7 +18,7 @@ const Signup = () => {
 
     const handleSignup = async () => {
         try {
-            setAlert("Signing up, please wait..."); // Moved before API call or navigation
+            setAlert("Signing up, please wait..."); 
             const userData = await axios.post(`${config.apiUrl}/Signup`, {
                 username,
                 email,
@@ -28,10 +28,10 @@ const Signup = () => {
             localStorage.setItem("user-info", JSON.stringify(userData.data));
             console.log("success signup");
 
-            // Slight delay to show message (optional)
-            setTimeout(() => {
-                navigate("/Dashboard");
-            }, 1000);
+            // // Slight delay to show message (optional)
+            // setTimeout(() => {
+            //     navigate("/Dashboard");
+            // }, 1000);
         } catch (error) {
             console.error("signup failed", error);
             setAlert("Signup failed. Please try again.");
