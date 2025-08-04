@@ -15,7 +15,7 @@ app.use(express.json());
 app.use("/api", authRoutes);
 
 app.get("/", (req: Request, res: Response) => {
-  res.json("API is connected");
+  res.json("API is connected...!");
 });
 
 app.listen(PORT, () => { 
