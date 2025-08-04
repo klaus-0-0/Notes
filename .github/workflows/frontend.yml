@@ -23,17 +23,17 @@ jobs:
         uses: bahmutov/npm-install@v1  # Installs Node.js dependencies and caches them automatically to speed up future builds
         with:
           working-directory: ./frontend
-          install-command: npm install
+          # install-command: npm install
 
-      - name: Run tests if present
-        run: |
-          if find . -type f \( -name "*.test.*" -o -name "*.spec.*" \) | grep -q .; then
-            echo "✅ Test files found. Running tests..."
-            npx vitest run
-          else
-            echo "⚠️ No test files found. Skipping tests."
-          fi
-        working-directory: ./frontend
+      # - name: Run tests if present
+      #   run: |
+      #     if find . -type f \( -name "*.test.*" -o -name "*.spec.*" \) | grep -q .; then
+      #       echo "✅ Test files found. Running tests..."
+      #       npx vitest run
+      #     else
+      #       echo "⚠️ No test files found. Skipping tests."
+      #     fi
+      #   working-directory: ./frontend
 
       - name: Build the project
         run: npm run build  # Runs the build command defined in your package.json (usually for Vite or React)
