@@ -40,7 +40,7 @@ const Signup = () => {
 
     // shadow-lg shadow-red-400
     return (
-        
+        <div
             className="min-h-screen bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center"
             style={{ backgroundImage: `url(${image})` }}
         >
