@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main  # Triggers the workflow when a push is made to the 'main' branch
+    paths:
+      - 'frontend/**'
+      - '.github/workflows/frontend.yml'
 
 jobs:
   build-and-deploy:  # Job definition (you can have multiple jobs per workflow)
