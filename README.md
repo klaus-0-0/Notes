@@ -62,6 +62,21 @@ cd frontend
 npm install
 npm run dev
 
+🚀 CI/CD Integration
+
+Continuous Integration and Continuous Deployment (CI/CD) ensures that every code update is automatically built, and deployed with minimal downtime.
+
+🔧 Tools Used
+
+- GitHub Actions for workflow automation  
+- Render Deploy Hooks for auto-deployment on successful builds
+
+📦 Workflow Highlights
+
+- 🛠️ Automated build on main branch pushes  
+- ✅ Runs backend Prisma client generation  
+- 🌐 Triggers frontend and backend redeployment using Render hooks
+
 ✅ TODOs
  Google OAuth |
  Delete notes |
