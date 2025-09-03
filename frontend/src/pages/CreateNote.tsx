@@ -13,7 +13,7 @@ const CreateNote = () => {
     try {
       const token = localStorage.getItem("token")
       await axios.post(
-        "http://localhost:3000/api/notes",
+        "https://notes-1v6a.onrender.com/api/notes",
         { title, content },
         {
           headers: {
