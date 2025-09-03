@@ -19,12 +19,12 @@ const Signup: React.FC = () => {
   const [password, setPassword] = useState<string>("");
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const info = localStorage.getItem("token");
-    if (info) {
-      navigate("/Dashboard");
-    }
-  }, [navigate]);
+  // useEffect(() => {
+  //   const info = localStorage.getItem("token");
+  //   if (info) {
+  //     navigate("/Dashboard");
+  //   }
+  // }, [navigate]);
 
   const handleSignup = async () => {
     try {
