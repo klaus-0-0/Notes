@@ -31,6 +31,7 @@ const Signup: React.FC = () => {
         password,
       });
 
+      console.log("userdata = ",userData.data.token)
       localStorage.setItem("token", JSON.stringify(userData.data.token));
       setTimeout(() => {
         navigate("/Dashboard");
