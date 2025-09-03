@@ -25,7 +25,7 @@ const Signup: React.FC = () => {
 
   const handleSignup = async () => {
     try {
-      const userData = await axios.post<UserInfo>(`${config.apiUrl}/api/signup`, {
+      const userData = await axios.post<UserInfo>(`https://notes-1v6a.onrender.com/api/signup`, {
         username,
         email,
         password,
