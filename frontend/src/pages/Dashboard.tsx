@@ -18,7 +18,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchNotes = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/api/fetchNotes", {
+        const res = await axios.get("https://notes-1v6a.onrender.com/api/fetchNotes", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
