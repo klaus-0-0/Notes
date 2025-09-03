@@ -37,7 +37,7 @@ const Login: React.FC = () => {
 
       localStorage.setItem("token", JSON.stringify(response.data.token));
       setTimeout(() => navigate("/Dashboard"), 1500);
-    } catch (err: any) {
+    } catch (err) {
       console.error(err);
       setError("Login Failed! Please check your credentials.");
       setLoading(false);
