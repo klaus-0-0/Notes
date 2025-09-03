@@ -5,9 +5,12 @@ import axios from "axios";
 import wall from "../assets/SignBI.png"
 
 interface UserInfo {
-  username: string;
-  number: string;
-  password: string;
+  token: string;
+  user: {
+    id: string;
+    username: string;
+    email: string;
+  };
 }
 
 const Signup: React.FC = () => {
