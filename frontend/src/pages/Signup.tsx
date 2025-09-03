@@ -17,7 +17,7 @@ const Signup: React.FC = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const info = localStorage.getItem("user-info");
+    const info = localStorage.getItem("token");
     if (info) {
       navigate("/Dashboard");
     }
