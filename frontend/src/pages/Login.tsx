@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import config from "../config";
+// import config from "../config";
 import wall from "../assets/loginBI.png"
 
 interface LoginResponse {
