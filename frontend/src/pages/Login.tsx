@@ -31,7 +31,7 @@ const Login: React.FC = () => {
     setError("");
 
     try {
-      const response = await axios.post<LoginResponse>(`${config.apiUrl}/api/login`,
+      const response = await axios.post<LoginResponse>(`https://notes-1v6a.onrender.com/api/login`,
         { email, password }
       );
 
